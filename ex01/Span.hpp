@@ -15,6 +15,7 @@
 # include <vector>
 # include <iostream>
 # include <exception>
+# include <algorithm>
 
 class Span
 {
@@ -26,7 +27,10 @@ class Span
 		Span(const Span &obj);
 		~Span();
 		Span& operator=(const Span &obj);
-		void addNumber(int number);	
+		void addNumber(int number);
+		int shortestSpan();
+		int longestSpan();
+		void display();
 };
 
 #endif

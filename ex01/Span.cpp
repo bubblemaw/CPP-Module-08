@@ -39,8 +39,41 @@ Span& Span::operator=(const Span &obj)
 	return (*this);
 }
 
-
 void Span::addNumber(int number)
 {
-	
+	if (_storage > _list.size())
+		_list.push_back(number);
+}
+
+int Span::shortestSpan()
+{
+	if (_list.size() < 2)
+		throw std::exception();	
+	std::vector<int> temp;
+	temp = _list;
+	for (int i = 0; i < temp.size(); i++)
+		std::cout << temp[i] << ' ';
+	std::cout << std::endl;		
+	sort(temp.begin(), temp.end());
+	for (int i = 0; i < temp.size(); i++)
+		std::cout << temp[i] << ' ';
+	std::cout << std::endl;		
+	return(temp.at(1) - temp.at(0));
+}
+
+int Span::longestSpan()
+{
+	if (_list.size() < 2)
+		throw std::exception();
+	std::vector<int> temp;
+	temp = _list;
+	sort(temp.begin(), temp.end());
+	return(temp.back() - temp.front());
+}
+
+void	Span::display()
+{
+	for (int i = 0; i < _list.size(); i++)
+		std::cout << _list[i] << ' ';
+	std::cout << std::endl;
 }
