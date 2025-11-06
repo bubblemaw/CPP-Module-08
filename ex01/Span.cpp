@@ -6,7 +6,7 @@
 /*   By: maw <maw@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 18:31:32 by maw               #+#    #+#             */
-/*   Updated: 2025/10/28 00:31:25 by maw              ###   ########.fr       */
+/*   Updated: 2025/11/02 12:31:48 by maw              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,19 @@ void Span::addNumber(int number)
 
 int Span::shortestSpan()
 {
+	int result = __INT_MAX__;
 	if (_list.size() < 2)
 		throw std::exception();	
 	std::vector<int> temp;
 	temp = _list;
-	for (int i = 0; i < temp.size(); i++)
-		std::cout << temp[i] << ' ';
-	std::cout << std::endl;		
 	sort(temp.begin(), temp.end());
-	for (int i = 0; i < temp.size(); i++)
-		std::cout << temp[i] << ' ';
-	std::cout << std::endl;		
-	return(temp.at(1) - temp.at(0));
+	std::vector<int>::iterator it;
+	for(it = temp.begin(); it + 1 < temp.end(); it++)
+	{						
+		if (*(it + 1) - *it < result)
+			result = *(it + 1) - *it;
+	}
+	return(result);
 }
 
 int Span::longestSpan()
@@ -77,3 +78,5 @@ void	Span::display()
 		std::cout << _list[i] << ' ';
 	std::cout << std::endl;
 }
+
+void Span::add_range()

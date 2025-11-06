@@ -6,7 +6,7 @@
 /*   By: maw <maw@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 18:31:42 by maw               #+#    #+#             */
-/*   Updated: 2025/10/28 10:01:56 by maw              ###   ########.fr       */
+/*   Updated: 2025/11/02 12:31:49 by maw              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <exception>
 # include <algorithm>
+# include <iterator>
 
 class Span
 {
@@ -31,6 +32,7 @@ class Span
 		int shortestSpan();
 		int longestSpan();
 		void display();
+		void add_range(std::iterator begin, Iterator end);
 };
 
 #endif
