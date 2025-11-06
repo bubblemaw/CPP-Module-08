@@ -32,7 +32,7 @@ class Span
 		int shortestSpan();
 		int longestSpan();
 		void display();
-		void add_range(std::iterator begin, Iterator end);
+		void add_range(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 };
 
 #endif

@@ -79,4 +79,11 @@ void	Span::display()
 	std::cout << std::endl;
 }
 
-void Span::add_range()
+void Span::add_range(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+	int add_size = end - begin;
+	if (add_size + _list.size() > _storage)
+		throw std::exception();
+	std::cout << "la taille " << add_size << std::endl;
+	_list.insert(_list.end(), begin, end);
+}
