@@ -57,7 +57,10 @@ int Span::shortestSpan()
 	for(it = temp.begin(); it + 1 < temp.end(); it++)
 	{						
 		if (*(it + 1) - *it < result)
+		{
 			result = *(it + 1) - *it;
+			// std::cout << "first: " << *(it + 1) << " second: " << *it << std::endl;
+		}
 	}
 	return(result);
 }
@@ -84,6 +87,5 @@ void Span::add_range(std::vector<int>::iterator begin, std::vector<int>::iterato
 	int add_size = end - begin;
 	if (add_size + _list.size() > _storage)
 		throw std::exception();
-	std::cout << "la taille " << add_size << std::endl;
 	_list.insert(_list.end(), begin, end);
 }
