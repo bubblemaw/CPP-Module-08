@@ -14,25 +14,27 @@
 # define MUTANTSTACK_HPP
 # include <iostream>
 # include <iterator>
-
+# include <vector>
+# include <list>
 
 template  <typename T>
 class MutantStack
 {
     private:
-        std::vector<T> _stack;
+        std::list<T> _stack;
     public:
         MutantStack ();
         MutantStack (const MutantStack &obj);
         ~MutantStack();
         MutantStack& operator=(const MutantStack &obj);
-        push(T value);
-        pop();
-        top();
-        empty();
-        size();
-        //iterator
+        void push(T value);
+        void pop();
+        T& top();
+        bool empty();
+        int size();
+        T& iterator();
 
 };
+# include "MutantStack.tpp"
 
 #endif
