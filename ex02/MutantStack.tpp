@@ -37,44 +37,31 @@ MutantStack<T>&    MutantStack<T>::operator=(const MutantStack &obj)
     std::cout << "Default MutantStack assigment operator" << std::endl;
     if (*this != &obj)
     {
-        this->_stack = obj._stack;
+        // this->_stack = obj._stack;
     }
     return *this;
 }
 
 template <typename T>
-void MutantStack<T>::push(T value)
+typename MutantStack<T>::iterator MutantStack<T>::begin()
 {
-    _stack.push_front(value);
+    return (this->c.begin());
 }
 
 template <typename T>
-void MutantStack<T>::pop()
+typename MutantStack<T>::iterator MutantStack<T>::end()
 {
-    _stack.pop_front();
+    return (this->c.end());
 }
 
 template <typename T>
-T& MutantStack<T>::top()
+typename MutantStack<T>::const_iterator MutantStack<T>::begin() const
 {
-    return (_stack.front());
+    return (this->c.begin());
 }
 
 template <typename T>
-bool MutantStack<T>::empty()
+typename MutantStack<T>::const_iterator MutantStack<T>::end() const
 {
-    return (_stack.empty());
+    return (this->c.end());
 }
-
-template <typename T>
-int MutantStack<T>::size()
-{
-    return (_stack.size());
-}
-
-template <typename T>
-T& MutantStack<T>::iterator()
-{
-    return (_stack.size());
-}
-

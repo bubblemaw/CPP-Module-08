@@ -16,24 +16,23 @@
 # include <iterator>
 # include <vector>
 # include <list>
+# include <stack>
+# include <deque>
 
 template  <typename T>
-class MutantStack
+class MutantStack : public std::stack<T>
 {
-    private:
-        std::list<T> _stack;
     public:
         MutantStack ();
         MutantStack (const MutantStack &obj);
         ~MutantStack();
         MutantStack& operator=(const MutantStack &obj);
-        void push(T value);
-        void pop();
-        T& top();
-        bool empty();
-        int size();
-        T& iterator();
-
+        typedef typename std::deque<T>::iterator iterator;
+        typedef typename std::deque<T>::const_iterator const_iterator;
+        iterator begin();
+        iterator end();
+        const_iterator begin() const;
+        const_iterator end() const;         
 };
 # include "MutantStack.tpp"
 

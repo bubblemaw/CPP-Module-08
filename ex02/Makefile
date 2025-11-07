@@ -8,10 +8,10 @@ RM = rm -f
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME:$(OBJS)
-	c++ $(FLAGS) $(OBJS) -o $(NAME)
+$(NAME) : $(OBJS)
+	c++ $(OBJS) $(FLAGS) -o $(NAME)
 
-all: $(NAME)
+all : $(NAME)
 
 clean:
 	$(RM) $(OBJS)

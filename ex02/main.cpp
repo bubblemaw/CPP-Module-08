@@ -34,6 +34,28 @@ while (it != ite)
 std::cout << *it << std::endl;
 ++it;
 }
-std::stack<int> s(mstack);
+// std::stack<int> s(mstack);
+// std::cout << "* WITH THE LIST THE CONTAINER" << std::endl;
+// std::list<int> lstack;
+// lstack.push_back(5);
+// lstack.push_back(17);
+// std::cout << lstack.back() << std::endl;
+// lstack.pop_back();
+// std::cout << lstack.size() << std::endl;
+// lstack.push_back(3);
+// lstack.push_back(5);
+// lstack.push_back(737);
+// //[...]
+// lstack.push_back(0);
+// std::list<int>::iterator it1 = lstack.begin();
+// std::list<int>::iterator ite1 = lstack.end();
+// ++it1;
+// --it1;
+// while (it1 != ite1)
+// {
+// std::cout << *it1 << std::endl;
+// ++it1;
+// }
+// // std::stack<int> s(lstack);
 return 0;
 }
