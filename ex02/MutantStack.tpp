@@ -35,10 +35,6 @@ template <typename T>
 MutantStack<T>&    MutantStack<T>::operator=(const MutantStack &obj)
 {
     std::cout << "Default MutantStack assigment operator" << std::endl;
-    if (*this != &obj)
-    {
-        // this->_stack = obj._stack;
-    }
     return *this;
 }
 
