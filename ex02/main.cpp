@@ -14,6 +14,7 @@
 
 int main()
 {
+std::cout << "* SUBJECTS TESTS *" << std::endl;
 MutantStack<int> mstack;
 mstack.push(5);
 mstack.push(17);
@@ -34,28 +35,54 @@ while (it != ite)
 std::cout << *it << std::endl;
 ++it;
 }
-// std::stack<int> s(mstack);
-// std::cout << "* WITH THE LIST THE CONTAINER" << std::endl;
-// std::list<int> lstack;
-// lstack.push_back(5);
-// lstack.push_back(17);
-// std::cout << lstack.back() << std::endl;
-// lstack.pop_back();
-// std::cout << lstack.size() << std::endl;
-// lstack.push_back(3);
-// lstack.push_back(5);
-// lstack.push_back(737);
-// //[...]
-// lstack.push_back(0);
-// std::list<int>::iterator it1 = lstack.begin();
-// std::list<int>::iterator ite1 = lstack.end();
-// ++it1;
-// --it1;
-// while (it1 != ite1)
-// {
-// std::cout << *it1 << std::endl;
-// ++it1;
-// }
-// // std::stack<int> s(lstack);
+
+std::cout << "* WITH THE LIST THE CONTAINER *" << std::endl;
+std::list<int> lstack;
+lstack.push_back(5);
+lstack.push_back(17);
+std::cout << lstack.back() << std::endl;
+lstack.pop_back();
+std::cout << lstack.size() << std::endl;
+lstack.push_back(3);
+lstack.push_back(5);
+lstack.push_back(737);
+//[...]
+lstack.push_back(0);
+std::list<int>::iterator it2 = lstack.begin();
+std::list<int>::iterator ite2 = lstack.end();
+++it2;
+--it2;
+while (it2 != ite2)
+{
+std::cout << *it2 << std::endl;
+++it2;
+}
+std::cout << "* OWN TESTS  *" << std::endl;
+MutantStack<int> own;
+
+own.push(45);
+own.push(89);
+own.push(100);
+std::cout << "pushed 45" << std::endl;
+std::cout << "pushed 89" << std::endl;
+std::cout << "pushed 100" << std::endl;
+MutantStack<int>::reverse_iterator r_it1 = own.rbegin();
+MutantStack<int>::reverse_iterator r_ite1 = own.rend();
+std::cout << "CURRENT STACK STATE" << std::endl;
+ite = own.end();
+for (it = own.begin(); it != ite; it++)
+    std::cout << *it << std::endl;
+std::cout << "REVERSE ORDER" << std::endl;
+while (r_it1 != r_ite1)
+{
+    std::cout << *r_it1 << std::endl;
+    r_it1++; 
+}
+own.pop();
+std::cout << "pop number at the top [100]" << std::endl;
+std::cout << "CURRENT STACK STATE" << std::endl;
+ite = own.end();
+for (it = own.begin(); it != ite; it++)
+    std::cout << *it << std::endl;
 return 0;
 }
